@@ -24,29 +24,66 @@
       padding-top:70px;
     }
 
-    #slides,
-    #slides2,
-    #slides3 {
-      display: none;
-      margin-bottom:50px;
+    #slides {
+      display: none
     }
 
-    .slidesjs-navigation {
-      margin-top:3px;
+    #slides .slidesjs-navigation {
+      margin-top:5px;
     }
 
-    .slidesjs-previous {
-      margin-right: 5px;
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(img/btns-next-prev.png);
+      background-repeat: no-repeat;
+      display:block;
+      width:12px;
+      height:18px;
+      overflow: hidden;
+      text-indent: -9999px;
       float: left;
+      margin-right:5px;
     }
 
-    .slidesjs-next {
-      margin-right: 5px;
-      float: left;
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
     }
 
     .slidesjs-pagination {
-      margin: 6px 0 0;
+      margin: 7px 0 0;
       float: right;
       list-style: none;
     }
@@ -76,13 +113,13 @@
       background-position: 0 -26px
     }
 
-    a:link,
-    a:visited {
+    #slides a:link,
+    #slides a:visited {
       color: #333
     }
 
-    a:hover,
-    a:active {
+    #slides a:hover,
+    #slides a:active {
       color: #9e2020
     }
 
@@ -137,6 +174,7 @@
   <!-- SlidesJS Required: -->
 </head>
 <body>
+
   <!-- SlidesJS Required: Start Slides -->
   <!-- The container is used to define the width of the slideshow -->
   <div class="container">
@@ -145,26 +183,6 @@
       <img src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
       <img src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
       <img src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
-      <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-      <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
-    </div>
-
-    <div id="slides2">
-      <img src="img/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
-      <img src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
-      <img src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
-      <img src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
-      <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-      <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
-    </div>
-
-    <div id="slides3">
-      <img src="img/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
-      <img src="img/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
-      <img src="img/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
-      <img src="img/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
-      <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-      <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
     </div>
   </div>
   <!-- End SlidesJS Required: Start Slides -->
@@ -183,27 +201,12 @@
       $('#slides').slidesjs({
         width: 940,
         height: 528,
-        navigation: false
-      });
-
-      /*
-        To have multiple slideshows on the same page
-        they just need to have separate IDs
-      */
-      $('#slides2').slidesjs({
-        width: 940,
-        height: 528,
-        navigation: false,
-        start: 3,
         play: {
-          auto: true
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
         }
-      });
-
-      $('#slides3').slidesjs({
-        width: 940,
-        height: 528,
-        navigation: false
       });
     });
   </script>
