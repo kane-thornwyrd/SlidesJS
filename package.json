@@ -2,6 +2,7 @@
   "name": "SlidesJS",
   "description": "Responsive slideshow plug-in for jQuery with features like touch and CSS3 transitions.",
   "version": "1.1.8-alpha.0",
+  "main": "source/slides.jquery.js",
   "keywords": [
     "responsive",
     "slideshow",
